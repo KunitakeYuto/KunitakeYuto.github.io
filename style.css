@@ -56,6 +56,8 @@ h1 .en {
 .courses .cols { display: flex; gap: 32px; }
 .courses .cols > div { flex: 1; }
 .courses ul { margin: 0 0 8px; padding-left: 1.2em; }
+.courses .writing { margin-top: 8px; padding-top: 10px; border-top: 1px solid #ccc; }
+.courses .writing p { margin: 0 0 6px; }
 .courses .ref { display: block; color: #666; font-size: 13px; line-height: 1.4; margin-bottom: 4px; }
 
 /* ---------- 目次 ---------- */
