@@ -45,6 +45,19 @@ h1 .en {
 
 .ext a { margin-right: 14px; }
 
+/* ---------- 担当可能な授業 ---------- */
+.courses {
+  margin: 20px 0 0;
+  padding: 14px 18px 10px;
+  border: 2px solid #222;
+}
+.courses h2 { margin: 0 0 8px; border-bottom: 0; padding-bottom: 0; }
+.courses h3 { margin: 4px 0 2px; }
+.courses .cols { display: flex; gap: 32px; }
+.courses .cols > div { flex: 1; }
+.courses ul { margin: 0 0 8px; padding-left: 1.2em; }
+.courses .ref { display: block; color: #666; font-size: 13px; line-height: 1.4; margin-bottom: 4px; }
+
 /* ---------- 目次 ---------- */
 .toc {
   margin: 20px 0 8px;
@@ -101,6 +114,8 @@ footer p { margin: 0; }
 @media (max-width: 600px) {
   body { padding: 20px 16px 40px; }
   h1 .en { display: block; margin: 0; }
+  .courses { padding: 12px 14px 6px; }
+  .courses .cols { display: block; }
   .photo { width: 90px; height: 112px; }
   .dated td { display: block; padding: 0; }
   .dated td:first-child { width: auto; padding-top: 6px; }
