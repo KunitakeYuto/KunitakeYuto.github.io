@@ -51,8 +51,8 @@ h1 .en {
   padding: 14px 18px 10px;
   border: 2px solid #222;
 }
-.courses h2 { margin: 0 0 8px; border-bottom: 0; padding-bottom: 0; }
-.courses h3 { margin: 4px 0 2px; }
+.courses h2 { margin: 0 0 8px; border-bottom: 0; padding-bottom: 0; font-size: 17px; }
+.courses .media { margin: 8px 0; font-size: 14px; font-weight: bold; }
 .courses .cols { display: flex; gap: 32px; }
 .courses .cols > div { flex: 1; }
 .courses ul { margin: 0 0 8px; padding-left: 1.2em; }
@@ -116,6 +116,7 @@ footer p { margin: 0; }
   h1 .en { display: block; margin: 0; }
   .courses { padding: 12px 14px 6px; }
   .courses .cols { display: block; }
+  .courses .cols > div + div { margin-top: 12px; }
   .photo { width: 90px; height: 112px; }
   .dated td { display: block; padding: 0; }
   .dated td:first-child { width: auto; padding-top: 6px; }
