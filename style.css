@@ -119,7 +119,7 @@ footer p { margin: 0; }
   .courses { padding: 12px 14px 6px; }
   .courses .cols { display: block; }
   .courses .cols > div + div { margin-top: 12px; }
-  .photo { width: 90px; height: 112px; }
+  .photo { width: 99px; height: 110px; }
   .dated td { display: block; padding: 0; }
   .dated td:first-child { width: auto; padding-top: 6px; }
   .dated td:last-child { padding-bottom: 6px; }
