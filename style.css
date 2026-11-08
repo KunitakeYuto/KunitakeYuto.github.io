@@ -1,205 +1,113 @@
-:root {
-  --bg: #fbfaf7;
-  --surface: #ffffff;
-  --text: #1f2328;
-  --muted: #5d6470;
-  --line: #e4e1da;
-  --accent: #1f4e79;
-  --accent-soft: #e8eef5;
-  --badge: #8a5a00;
-  --badge-bg: #fbf1dc;
-  --serif: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
-  --sans: "Noto Sans JP", "Hiragino Sans", "Yu Gothic UI", "Meiryo", sans-serif;
-}
+/*
+  方針：白背景・黒文字・リンクは青の下線。装飾は罫線だけ。
+  Webフォント、角丸、影、グラデーション、アニメーションは使わない。
+*/
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #15181c;
-    --surface: #1c2025;
-    --text: #e6e8eb;
-    --muted: #a0a7b1;
-    --line: #2d333b;
-    --accent: #8fb8e0;
-    --accent-soft: #22303f;
-    --badge: #f0c674;
-    --badge-bg: #3a2f17;
-  }
-}
-
-* { box-sizing: border-box; }
-
-html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+html { background: #fff; }
 
 body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--sans);
-  font-size: 16px;
-  line-height: 1.8;
-  -webkit-text-size-adjust: 100%;
+  margin: 0 auto;
+  max-width: 780px;
+  padding: 32px 20px 48px;
+  background: #fff;
+  color: #222;
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "YuGothic", "Meiryo", sans-serif;
+  font-size: 15px;
+  line-height: 1.75;
 }
 
-a { color: var(--accent); text-underline-offset: 3px; }
-a:hover { text-decoration-thickness: 2px; }
+a { color: #1a0dab; }
+a:visited { color: #5c2d91; }
 
-.wrap { max-width: 920px; margin: 0 auto; padding-left: 20px; padding-right: 20px; }
+/* ---------- 冒頭 ---------- */
+.top::after { content: ""; display: block; clear: both; }
 
-/* ---------- header ---------- */
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: color-mix(in srgb, var(--bg) 92%, transparent);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--line);
+.photo {
+  float: right;
+  margin: 0 0 12px 20px;
+  border: 1px solid #ccc;
+  object-fit: cover;
 }
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  min-height: 56px;
-}
-.brand {
-  font-family: var(--serif);
-  font-weight: 700;
-  color: var(--text);
-  text-decoration: none;
-  white-space: nowrap;
-}
-.brand span { font-family: var(--sans); font-weight: 400; font-size: 13px; color: var(--muted); margin-left: 6px; }
-.nav { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; }
-.nav::-webkit-scrollbar { display: none; }
-.nav a {
-  color: var(--muted);
-  text-decoration: none;
-  font-size: 14px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  white-space: nowrap;
-}
-.nav a:hover { color: var(--accent); background: var(--accent-soft); }
 
-/* ---------- hero ---------- */
-.hero {
-  display: grid;
-  grid-template-columns: 160px 1fr;
-  gap: 40px;
-  align-items: start;
-  padding-top: 64px;
-  padding-bottom: 48px;
-}
-.avatar {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  overflow: hidden;
-  background: var(--accent-soft);
-  display: grid;
-  place-items: center;
-  border: 1px solid var(--line);
-}
-.avatar img { width: 100%; height: 100%; object-fit: cover; }
-.avatar span { font-family: var(--serif); font-size: 64px; color: var(--accent); }
-.kana { margin: 0; font-size: 13px; letter-spacing: .2em; color: var(--muted); }
 h1 {
-  margin: 0;
-  font-family: var(--serif);
-  font-size: 40px;
-  line-height: 1.3;
-  letter-spacing: .08em;
+  margin: 0 0 8px;
+  font-size: 26px;
+  font-weight: bold;
 }
-.en-name { margin: 0 0 16px; color: var(--muted); letter-spacing: .05em; }
-.affil { list-style: none; margin: 0 0 20px; padding: 0; }
-.affil li { padding-left: 14px; position: relative; }
-.affil li::before { content: ""; position: absolute; left: 0; top: .85em; width: 6px; height: 1px; background: var(--muted); }
-.lead { margin: 0 0 20px; }
-.links { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
-.links a {
-  display: inline-block;
-  padding: 4px 14px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: var(--surface);
-  text-decoration: none;
+h1 .en {
+  margin-left: 10px;
+  font-size: 15px;
+  font-weight: normal;
+  color: #555;
+}
+
+.affil { margin: 0 0 12px; }
+
+.ext a { margin-right: 14px; }
+
+/* ---------- 目次 ---------- */
+.toc {
+  margin: 20px 0 8px;
+  padding: 8px 0;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
   font-size: 14px;
 }
-.links a:hover { border-color: var(--accent); }
+.toc a { margin-right: 14px; white-space: nowrap; }
 
-/* ---------- sections ---------- */
-.block { padding-top: 40px; padding-bottom: 8px; }
+/* ---------- 見出し ---------- */
 h2 {
-  font-family: var(--serif);
-  font-size: 24px;
-  margin: 0 0 20px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid var(--text);
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
+  margin: 36px 0 12px;
+  padding-bottom: 4px;
+  font-size: 18px;
+  border-bottom: 2px solid #222;
 }
-h2 small { font-family: var(--sans); font-size: 13px; font-weight: 400; color: var(--muted); letter-spacing: .08em; }
-h3 { font-size: 16px; margin: 28px 0 10px; color: var(--accent); }
-h2 + h3, h2 + .note + h3 { margin-top: 0; }
-
-.note { color: var(--muted); font-size: 14px; }
-
-.tags { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
-.tags li { background: var(--accent-soft); color: var(--accent); padding: 2px 12px; border-radius: 4px; font-size: 14px; }
-
-.plain { margin: 0; padding-left: 1.2em; }
-
-.list { list-style: none; margin: 0; padding: 0; }
-.list li {
-  display: grid;
-  grid-template-columns: 9.5em 1fr;
-  gap: 12px;
-  padding: 8px 0;
-  border-bottom: 1px solid var(--line);
+h3 {
+  margin: 20px 0 6px;
+  font-size: 15px;
 }
-.list li:last-child { border-bottom: 0; }
-.date { color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; padding-top: 1px; }
 
-.pubs { margin: 0; padding-left: 2em; }
-.pubs li { padding: 6px 0 6px 4px; }
-.pubs li::marker { color: var(--muted); font-size: 14px; }
+.note { color: #666; font-size: 13px; }
 
-.badge {
-  display: inline-block;
-  font-size: 12px;
-  line-height: 1.6;
-  padding: 0 8px;
-  border-radius: 4px;
-  color: var(--badge);
-  background: var(--badge-bg);
+/* ---------- 表 ---------- */
+table { border-collapse: collapse; width: 100%; }
+td, th { padding: 5px 0; vertical-align: top; text-align: left; }
+tr + tr td, tr + tr th { border-top: 1px dotted #ccc; }
+
+.kv th { width: 7em; font-weight: normal; color: #555; padding-right: 12px; white-space: nowrap; }
+
+.dated td:first-child {
+  width: 10.5em;
+  padding-right: 12px;
+  color: #555;
   white-space: nowrap;
-  vertical-align: 1px;
 }
 
-.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
-.two-col h3 { margin-top: 0; }
-.two-col .list li { grid-template-columns: 1fr; gap: 0; }
+/* ---------- 論文 ---------- */
+.pubs { margin: 0; padding-left: 2.2em; }
+.pubs li { margin-bottom: 8px; }
 
-.inline-list { margin: 0; }
+/* ---------- フッター ---------- */
+footer {
+  margin-top: 48px;
+  padding-top: 8px;
+  border-top: 1px solid #ccc;
+  color: #666;
+  font-size: 13px;
+}
+footer p { margin: 0; }
 
-.mail { font-size: 18px; margin: 8px 0; }
-.mail span { color: var(--muted); }
-
-/* ---------- footer ---------- */
-.site-footer { margin-top: 64px; border-top: 1px solid var(--line); padding: 24px 0 40px; color: var(--muted); font-size: 14px; }
-.site-footer p { margin: 0; }
-
-/* ---------- mobile ---------- */
-@media (max-width: 720px) {
-  .wrap { padding-left: 16px; padding-right: 16px; }
-  .brand span { display: none; }
-  .hero { grid-template-columns: 1fr; gap: 20px; padding-top: 36px; }
-  .avatar { width: 112px; height: 112px; }
-  .avatar span { font-size: 44px; }
-  h1 { font-size: 32px; }
-  .list li { grid-template-columns: 1fr; gap: 0; }
-  .two-col { grid-template-columns: 1fr; gap: 8px; }
-  .two-col h3 { margin-top: 20px; }
-  .pubs { padding-left: 1.6em; }
+/* ---------- スマートフォン ---------- */
+@media (max-width: 600px) {
+  body { padding: 20px 16px 40px; }
+  h1 .en { display: block; margin: 0; }
+  .photo { width: 90px; height: 112px; }
+  .dated td { display: block; padding: 0; }
+  .dated td:first-child { width: auto; padding-top: 6px; }
+  .dated td:last-child { padding-bottom: 6px; }
+  .dated tr + tr td:last-child { border-top: 0; }
+  .kv th, .kv td { display: block; padding: 0; }
+  .kv th { padding-top: 6px; }
+  .kv td { padding-bottom: 6px; }
+  .kv tr + tr td { border-top: 0; }
 }
