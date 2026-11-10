@@ -101,6 +101,24 @@ tr + tr td, tr + tr th { border-top: 1px dotted #ccc; }
 /* ---------- 論文 ---------- */
 .pubs { margin: 0; padding-left: 2.2em; }
 .pubs li { margin-bottom: 8px; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.tag {
+  display: inline-block;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: #f0f0f0;
+  font-size: 12px;
+  line-height: 1.9;
+  white-space: nowrap;
+}
+.t-peer   { color: #2a9d8f; }
+.t-oa     { color: #6a9a00; }
+.t-scopus { color: #e8650a; }
+.t-doaj   { color: #e8650a; }
+.t-wos    { color: #5b3f9e; }
+.t-ieee   { color: #00629b; }
+.t-jstage { color: #9b1b30; }
+.t-un     { color: #2a6fb0; }
 
 /* ---------- フッター ---------- */
 footer {
