@@ -20,14 +20,7 @@ a { color: #1a0dab; }
 a:visited { color: #5c2d91; }
 
 /* ---------- 冒頭 ---------- */
-.top::after { content: ""; display: block; clear: both; }
 
-.photo {
-  float: right;
-  margin: 0 0 12px 20px;
-  border: 1px solid #ccc;
-  object-fit: cover;
-}
 
 h1 {
   margin: 0 0 8px;
@@ -45,23 +38,33 @@ h1 .en {
 
 .ext a { margin-right: 14px; }
 
+
+/* ---------- 冒頭の右列（写真・Google Scholar） ---------- */
+.top { display: grid; grid-template-columns: 1fr 180px; gap: 28px; align-items: start; }
+.top-side { display: flex; flex-direction: column; gap: 12px; }
+.photo { display: block; width: 180px; height: 200px; object-fit: cover; border: 1px solid #ccc; }
+
 .scholar {
-  display: inline-block;
-  margin: 2px 0 4px;
-  padding: 8px 12px 6px;
+  display: block;
+  padding: 8px 10px 6px;
   border: 1px solid #ccc;
   color: #222;
   text-decoration: none;
+  font-size: 13px;
 }
 .scholar:visited { color: #222; }
 .scholar:hover { border-color: #1a0dab; }
-.scholar table { width: auto; font-size: 13px; }
-.scholar caption { text-align: left; font-weight: bold; color: #1a0dab; padding-bottom: 2px; }
-.scholar th { font-weight: normal; color: #555; padding: 1px 16px 1px 0; }
-.scholar td { text-align: right; padding: 1px 0 1px 18px; font-variant-numeric: tabular-nums; }
+.sc-title { display: block; font-weight: bold; color: #1a0dab; margin-bottom: 2px; }
+.scholar table { width: 100%; }
+.scholar th { font-weight: normal; color: #555; padding: 1px 0; }
+.scholar td { text-align: right; padding: 1px 0; font-variant-numeric: tabular-nums; }
 .scholar tr + tr td, .scholar tr + tr th { border-top: 1px solid #eee; }
-.scholar tr:first-child td { color: #555; font-size: 12px; }
-.scholar .asof { display: block; margin-top: 2px; color: #888; font-size: 11px; text-align: right; }
+.bars { display: flex; justify-content: space-around; align-items: flex-end; height: 92px; margin-top: 8px; border-bottom: 1px solid #999; }
+.bar { display: flex; flex-direction: column; align-items: center; width: 30px; position: relative; }
+.bar .b { display: block; width: 14px; background: #777; }
+.bar .v { font-size: 11px; color: #555; line-height: 1.4; }
+.bar .y { position: absolute; bottom: -17px; font-size: 10px; color: #777; }
+.scholar .asof { display: block; margin-top: 18px; color: #888; font-size: 11px; text-align: right; }
 
 /* ---------- 担当可能な授業 ---------- */
 .courses {
@@ -161,10 +164,13 @@ footer p { margin: 0; }
 @media (max-width: 600px) {
   body { padding: 20px 16px 40px; }
   h1 .en { display: block; margin: 0; }
+  .top { grid-template-columns: 1fr; gap: 12px; }
+  .top-side { flex-direction: row; align-items: flex-start; }
+  .photo { width: 108px; height: 120px; flex: none; }
+  .scholar { flex: 1; }
   .courses { padding: 12px 14px 6px; }
   .courses .cols { display: block; }
   .courses .cols > div + div { margin-top: 12px; }
-  .photo { width: 99px; height: 110px; }
   .dated td { display: block; padding: 0; }
   .dated td:first-child { width: auto; padding-top: 6px; }
   .dated td:last-child { padding-bottom: 6px; }
