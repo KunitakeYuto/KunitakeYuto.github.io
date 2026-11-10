@@ -101,6 +101,9 @@ tr + tr td, tr + tr th { border-top: 1px dotted #ccc; }
 /* ---------- 論文 ---------- */
 .pubs { margin: 0; padding-left: 2.2em; }
 .pubs li { margin-bottom: 8px; }
+.pubs li.has-sjr::after { content: ""; display: block; clear: both; }
+.sjr { float: right; margin: 2px 0 6px 14px; line-height: 0; }
+.sjr img { border: 1px solid #ddd; }
 .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
 .tag {
   display: inline-block;
