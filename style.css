@@ -127,6 +127,7 @@ tr + tr td, tr + tr th { border-top: 1px dotted #ccc; }
 .t-ieee   { color: #00629b; }
 .t-jstage { color: #9b1b30; }
 .t-un     { color: #2a6fb0; }
+.t-ssrn   { color: #1f3f77; }
 
 /* ---------- フッター ---------- */
 footer {
