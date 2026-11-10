@@ -114,6 +114,11 @@ tr + tr td, tr + tr th { border-top: 1px dotted #ccc; }
   line-height: 1.9;
   white-space: nowrap;
 }
+.t-journal { color: #b08d00; }
+.t-intl    { color: #c0392b; }
+.t-dom     { color: #a0522d; }
+.t-thesis  { color: #555; }
+.t-other   { color: #555; }
 .t-peer   { color: #2a9d8f; }
 .t-oa     { color: #6a9a00; }
 .t-scopus { color: #e8650a; }
