@@ -181,3 +181,6 @@ footer p { margin: 0; }
   .kv td { padding-bottom: 6px; }
   .kv tr + tr td { border-top: 0; }
 }
+
+/* 論文の DOI・本文リンク */
+.pubs .link { display: inline-block; max-width: 100%; font-size: 13px; overflow-wrap: anywhere; }
