@@ -184,3 +184,6 @@ footer p { margin: 0; }
 
 /* 論文の DOI・本文リンク */
 .pubs .link { display: inline-block; max-width: 100%; font-size: 13px; overflow-wrap: anywhere; }
+
+/* 英語版 */
+html[lang="en"] body { font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif; }
